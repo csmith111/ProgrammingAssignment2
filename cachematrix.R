@@ -1,9 +1,7 @@
-##changes by csmith
-## Put comments here that give an overall description of what your
-## functions do
+##changes by csmith 2/16
 
-## Write a short comment describing this function
-
+## the makeCache martix creates function that 
+## allows you to set/get a vector and its inverse 
 makeCacheMatrix <- function(x = matrix()) {
         inverse_cache <- NULL
         set <-function(y){
@@ -17,7 +15,10 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## the makeCache martix creates function that 
+## allows you to set/get a vector and its inverse
+## This function caches the result of computing the inverse
+## and reuses this on future calls
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
