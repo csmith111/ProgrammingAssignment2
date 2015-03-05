@@ -1,14 +1,10 @@
+##changes by csmith 2/17 added comments
 
-# Github project location
-# https://github.com/csmith111/ProgrammingAssignment2.git
-# 
-# makeCacheMartix is a function that 
-# allows you to create a structure that holds a matrix 
-# and its inverse along with list of functions that allow you to 
-# get and set the matrix and its inverse. 
-# the input matrix is stored in the variable x 
-# and the inverse is stored in the variable inverse_cache
-
+## makeCacheMartix is a function that 
+## allows you to store a matrix and its inverse 
+##and returns to you a list of functions that allow you to 
+##get and set these values. the input matrix is stored in the variable
+## x and the inverse is stored in the variable inverse_cache
 makeCacheMatrix <- function(x = matrix()) {
         inverse_cache <- NULL
         set <-function(y){
@@ -22,15 +18,15 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-# the cacheSolve function takes an input variable that is 
-# the structure returned by makeCacheMatrix. It then checks to see if
-# the matrix contains the value of inverse 
-#       if TRUE it returns this value and prints a comment saying getting cached data
-#       if FALSE it computes the inverse using the solve function, stores it in 
-#        the cache and return the cpmputed inverse. 
-#Typically the second time onwards  you will access the cached value.
-
+## the cache solve function takes an input variable that is 
+## the list returned by makeCacheMatrix. It then checks to see if
+## the matrix contain the value of inverse if so it returns this
+## There is comment printed saying getting cached data
+##Otherwise it computes the inverse using the solve function, stores it in 
+## the cache and return the cpmputed inverse. Typically the second time onwards 
+##you will access the cached value.
 cacheSolve <- function(x, ...) {
+        ## Return a matrix that is the inverse of 'x'
         inverse <- x$getinverse()
         if(!is.null(inverse)){
                 message("getting cached data")
@@ -42,17 +38,11 @@ cacheSolve <- function(x, ...) {
         inverse
 }
 
-##test code
-runTest<-function(){
-        t_matrix=matrix(seq(1:4),2)
-        mcache=makeCacheMatrix(t_matrix)
-        #the first call will require the computation to be done
-        print("first invocation: ")
-        print(cacheSolve(mcache))
-        
-        #The second call - the cache will be used 
-        print("second invocation: ")
-        print(cacheSolve(mcache))
-}
+##sample test code
+##t_matrix=matrix(seq(1:4),2)
+##mcache=makeCacheMatrix(t_matrix)
+##cacheSolve(mcache)
+##cacheSolve(mcache)
+
 
 
